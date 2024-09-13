@@ -340,6 +340,10 @@
             "usingTestRunner": {
               "link": "/learn/test-runner/using-test-runner",
               "label": "components.navigation.learn.testRunner.links.usingTestRunner"
+            },
+            "collectingCodeCoverage": {
+              "link": "/learn/test-runner/collecting-code-coverage",
+              "label": "components.navigation.learn.testRunner.links.collectingCodeCoverage"
             }
           }
         }
