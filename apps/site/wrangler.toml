@@ -1,0 +1,31 @@
+main = ".open-next/worker.js"
+name = "nodejs-website"
+compatibility_date = "2024-11-07"
+compatibility_flags = ["nodejs_compat"]
+account_id = "8ed4d03ac99f77561d0e8c9cbcc76cb6"
+minify = true
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[alias]
+"node:fs" = "./.cloudflare/node/fs.mjs"
+"node:fs/promises" = "./.cloudflare/node/fs/promises.mjs"
+"server-only" = "./.cloudflare/server-only.mjs"
+"@opentelemetry/api" = "./.cloudflare/opentelemetry.mjs"
+# There is a `require("react-dom/server.edge")` in the `pages.runtime.prod.js` file
+# but there isn't a `server.edge` entry in the `react-dom` package, so we just replace
+# it with the existing `server.browser` (we should investigate why we have this behavior
+# in the first place)
+"react-dom/server.edge" = "react-dom/server.browser"
+"jimp" = "./.cloudflare/empty.mjs"
+"probe-image-size" = "./.cloudflare/empty.mjs"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[[kv_namespaces]]
+binding = "NEXT_CACHE_WORKERS_KV"
+id = "32e8e26d2d2647fd96789baf83209fa9"

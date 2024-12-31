@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": { "@/*": ["./*"] },
+    "paths": { "@/*": ["./*"], "@generated/*": ["./.generated/*"] },
     "plugins": [{ "name": "next" }],
     "baseUrl": "."
   },

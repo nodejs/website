@@ -7,11 +7,15 @@ import { glob } from 'glob';
 
 import { availableLocaleCodes } from '../../next.locales.mjs';
 
+const preGeneratedDownloadSnippets = [
+  /* generated at build time */
+];
+
 /**
  * This method is used to generate the Node.js Website Download Snippets
  * for self-consumption during RSC and Static Builds
  */
-const generateDownloadSnippets = async () => {
+export const generateRawDownloadSnippets = async () => {
   /**
    * This generates all the Download Snippets for each available Locale
    *
@@ -37,6 +41,19 @@ const generateDownloadSnippets = async () => {
 
     return [locale, await Promise.all(snippets)];
   });
+  return await Promise.all(downloadSnippets);
+};
+
+/**
+ * This method is used to generate the Node.js Website Download Snippets
+ * for self-consumption during RSC and Static Builds
+ */
+const generateDownloadSnippets = async () => {
+  if (preGeneratedDownloadSnippets) {
+    return new Map(preGeneratedDownloadSnippets);
+  }
+
+  const downloadSnippets = generateRawDownloadSnippets();
 
   return new Map(await Promise.all(downloadSnippets));
 };

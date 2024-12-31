@@ -32,3 +32,10 @@ cache
 tsconfig.tsbuildinfo
 
 dist/
+
+# Ignore worker artifacts
+apps/site/.open-next
+apps/site/.wrangler
+
+# Pre-build generated files
+apps/site/.generated

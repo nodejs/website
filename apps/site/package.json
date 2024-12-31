@@ -5,6 +5,8 @@
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
     "serve": "npm run dev",
+    "predev": "node scripts/prebuild.generator.mjs",
+    "prebuild": "node scripts/prebuild.generator.mjs",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true npm run build",
@@ -19,7 +21,12 @@
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test": "turbo test:unit"
+    "test": "turbo test:unit",
+    "cf": "npm run prebuild && npm run cf:build && npm run cf:preview",
+    "precf:build": "npm run prebuild",
+    "cf:build": "cross-env opennextjs-cloudflare && ln -s ../../pages ./.open-next/assets/",
+    "cf:preview": "npx wrangler dev",
+    "cf:deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
@@ -111,6 +118,8 @@
     "stylelint-selector-bem-pattern": "4.0.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "~8.16.0",
-    "user-agent-data-types": "0.4.2"
+    "user-agent-data-types": "0.4.2",
+    "wrangler": "^3.90.0",
+    "@opennextjs/cloudflare": "0.3.3"
   }
 }

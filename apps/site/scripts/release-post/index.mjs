@@ -29,7 +29,7 @@ import { format } from 'prettier';
 
 import { downloadsTable } from './downloadsTable.mjs';
 import prettierConfig from '../../../../.prettierrc.json' with { type: 'json' };
-import { getRelativePath } from '../../next.helpers.mjs';
+import { getRelativePath } from '../../.generated/next.helpers.mjs';
 
 const URLS = {
   NODE_DIST_JSON: 'https://nodejs.org/dist/index.json',
