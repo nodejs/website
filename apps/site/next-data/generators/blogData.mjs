@@ -6,7 +6,7 @@ import readline from 'node:readline';
 
 import graymatter from 'gray-matter';
 
-import { getMarkdownFiles } from '../../next.helpers.mjs';
+import { getMarkdownFiles } from '../../.generated/next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
@@ -62,6 +62,17 @@ const generateBlogData = async () => {
   const filenames = await getMarkdownFiles(process.cwd(), 'pages/en/blog', [
     '**/index.md',
   ]);
+
+  const result = {
+    /* generated at build time */
+  };
+
+  if (Object.keys(result).length > 0) {
+    return {
+      ...result,
+      posts: result.posts.map(post => ({ ...post, date: new Date(post.date) })),
+    };
+  }
 
   return new Promise(resolve => {
     const posts = [];

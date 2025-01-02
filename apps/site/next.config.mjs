@@ -69,6 +69,15 @@ const nextConfig = {
   // as we already check it on the CI within each Pull Request
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
+  // Adds custom WebPack configuration to our Next.js setup
+  webpack: function (config) {
+    // CF hacking: temporarily disable minification to make debugging easier
+    config.optimization = {
+      minimize: false,
+    };
+
+    return config;
+  },
   experimental: {
     // Ensure that server-side code is also minified
     serverMinification: true,
