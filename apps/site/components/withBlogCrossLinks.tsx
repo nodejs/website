@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
-import CrossLink from '@/components/Common/CrossLink';
+import CrossLink from '@/components/withCrossLink';
 import getBlogData from '@/next-data/blogData';
 import type { BlogCategory } from '@/types';
 

@@ -1,7 +1,9 @@
 'use strict';
 
-import Blockquote from './components/Common/Blockquote';
-import Button from './components/Common/Button';
+import Blockquote from '@node-core/ui-components/Common/Blockquote';
+
+import Button from '@/components/withButton';
+
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';

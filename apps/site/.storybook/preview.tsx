@@ -6,7 +6,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from '@/.storybook/constants';
 import { NotificationProvider } from '@/providers/notificationProvider';
 
-import '../styles/index.css';
+import '@node-core/ui-components/styles/index.css';
 
 const preview: Preview = {
   parameters: {

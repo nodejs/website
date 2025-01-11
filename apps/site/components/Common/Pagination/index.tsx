@@ -2,8 +2,8 @@ import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
 import { useGetPageElements } from '@/components/Common/Pagination/useGetPageElements';
+import Button from '@/components/withButton';
 
 import styles from './index.module.css';
 

@@ -4,7 +4,7 @@ import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
-import Button from '@/components/Common/Button';
+import Button from '@/components/withButton';
 import { useClientContext } from '@/hooks';
 import type { NodeRelease } from '@/types';
 import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';

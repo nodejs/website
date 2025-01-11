@@ -1,6 +1,7 @@
+import CodeBox from '@node-core/ui-components/Common/CodeBox';
 import type { FC, PropsWithChildren } from 'react';
 
-import CodeBox from '@/components/Common/CodeBox';
+import CopyButton from '@/components/Common/CopyButton';
 import { getLanguageDisplayName } from '@/util/getLanguageDisplayName';
 
 type CodeBoxProps = { className?: string; showCopyButton?: string };
@@ -8,16 +9,15 @@ type CodeBoxProps = { className?: string; showCopyButton?: string };
 const MDXCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children: code,
   className,
-  showCopyButton,
+  showCopyButton = 'true',
 }) => {
-  const matches = className?.match(/language-(?<language>[a-zA-Z]+)/);
+  const matches = className?.match(/language-(?<language>.*)/);
   const language = matches?.groups?.language ?? '';
 
   return (
     <CodeBox
       language={getLanguageDisplayName(language)}
-      showCopyButton={showCopyButton ? showCopyButton === 'true' : undefined}
-      className={className}
+      CopyButton={showCopyButton === 'true' ? CopyButton : undefined}
     >
       {code}
     </CodeBox>
