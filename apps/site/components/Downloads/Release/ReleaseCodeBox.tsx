@@ -1,12 +1,13 @@
 'use client';
 
+import AlertBox from '@node-core/ui-components/Common/AlertBox';
+import CodeBox from '@node-core/ui-components/Common/CodeBox';
+import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext, useMemo } from 'react';
 
-import AlertBox from '@/components/Common/AlertBox';
-import CodeBox from '@/components/Common/CodeBox';
-import Skeleton from '@/components/Common/Skeleton';
+import CopyButton from '@/components/Common/CopyButton';
 import Link from '@/components/Link';
 import LinkWithArrow from '@/components/LinkWithArrow';
 import { createSval } from '@/next.jsx.compiler.mjs';
@@ -134,7 +135,11 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <Skeleton loading={renderSkeleton}>
-        <CodeBox language={displayName} className="min-h-[16.5rem]">
+        <CodeBox
+          language={displayName}
+          className="min-h-[16.5rem]"
+          CopyButton={CopyButton}
+        >
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
       </Skeleton>

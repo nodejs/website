@@ -1,7 +1,7 @@
+import HexagonGridIcon from '@node-core/ui-components/Icons/HexagonGrid';
+import JsWhiteIcon from '@node-core/ui-components/Icons/Logos/JsWhite';
 import { ImageResponse } from 'next/og';
 
-import HexagonGrid from '@/components/Icons/HexagonGrid';
-import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 import { DEFAULT_CATEGORY_OG_TYPE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import tailwindConfig from '@/tailwind.config';
@@ -34,10 +34,10 @@ export const GET = async (_: Request, props: StaticParams) => {
   return new ImageResponse(
     (
       <div tw="relative flex items-center justify-center bg-black w-[1200px] h-[600px]">
-        <HexagonGrid style={{ background: gridBackground }} />
+        <HexagonGridIcon style={{ background: gridBackground }} />
 
         <div tw="absolute mx-auto flex max-w-xl flex-col text-center text-3xl font-semibold text-white">
-          <JsIconWhite width={71} height={80} tw="mx-auto" />
+          <JsWhiteIcon width={71} height={80} tw="mx-auto" />
 
           <h2>{params.title.slice(0, 100)}</h2>
         </div>

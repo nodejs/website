@@ -3,7 +3,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
+import Button from '@/components/withButton';
 import BaseLayout from '@/layouts/Base';
 import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 

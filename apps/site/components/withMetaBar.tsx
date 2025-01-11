@@ -1,10 +1,10 @@
 'use client';
 
+import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import MetaBar from '@/components/Containers/MetaBar';
-import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import WithAvatarGroup from '@/components/withAvatarGroup';
 import { useClientContext } from '@/hooks/react-client';
@@ -51,7 +51,7 @@ const WithMetaBar: FC = () => {
         }),
         'components.metabar.contribute': (
           <>
-            <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
+            <GitHubIcon className="fill-neutral-700 dark:fill-neutral-100" />
             <Link
               href={
                 locale === defaultLocale.code

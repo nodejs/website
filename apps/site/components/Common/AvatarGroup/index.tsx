@@ -1,5 +1,6 @@
 'use client';
 
+import Tooltip from '@node-core/ui-components/Common/Tooltip';
 import classNames from 'classnames';
 import type { FC } from 'react';
 import { useState, useMemo, Fragment } from 'react';
@@ -8,7 +9,6 @@ import type { AvatarProps } from '@/components/Common/AvatarGroup/Avatar';
 import Avatar from '@/components/Common/AvatarGroup/Avatar';
 import avatarstyles from '@/components/Common/AvatarGroup/Avatar/index.module.css';
 import AvatarOverlay from '@/components/Common/AvatarGroup/Overlay';
-import Tooltip from '@/components/Common/Tooltip';
 
 import styles from './index.module.css';
 
